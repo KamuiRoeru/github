@@ -3,7 +3,7 @@
 from time import time
 from glob import glob
 files = glob("*.txt")
-
+#Gitテスト
 start = time()
 for filename in files:
     with open(filename) as f:
