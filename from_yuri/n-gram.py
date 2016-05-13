@@ -1,9 +1,10 @@
-#!/usr/bin/env python
+#/usr/bin/env python
 # -*- coding: utf-8 -*-
-
+from time import time
 from glob import glob
 files = glob("*.txt")
 
+start = time()
 for filename in files:
     with open(filename) as f:
         lines = [line.strip() for line in f] #リストを作成
@@ -21,3 +22,7 @@ for filename in files:
         with open(filename + "." + str(gram_n) + "gram", mode="w") as f_ngram:
             for k, v in sorted(d.items()):
                 f_ngram.write(k + "\t" + str(v/tokens) + "\n")
+
+    print(filename)
+
+print("処理時間 = " + "".format((time() - start)/60) + "[min]")
