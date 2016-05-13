@@ -6,7 +6,7 @@ files = glob("*.txt")
 
 for filename in files:
     with open(filename) as f:
-        lines = [line.strip() for line in f]
+        lines = [line.strip() for line in f] #リストを作成
 
     for gram_n in range(1, 6):
         from collections import defaultdict
